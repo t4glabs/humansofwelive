@@ -1,187 +1,116 @@
-# Humans of WeLive - Static Website
+# Humans of WeLive - Static Site
 
-Static HTML version of the Humans of WeLive Ghost blog, ready for **free GitHub Pages hosting**.
+This is the deployable static website converted from Ghost blog.
 
-> We are the people of WeLive Foundation!
+## ✅ Ready for GitHub Pages
 
-## 📦 What's Inside
-
-The `/site` folder contains your complete static website:
-- **index.html** - Homepage listing all blog posts
-- **7 individual blog pages** - Each person's story
-- **All images** - Downloaded locally (25 MB)
+This folder contains everything needed for GitHub Pages:
+- **index.html** - Homepage with all posts
+- **7 blog post pages** - Individual story pages
+- **content/images/** - All images (25 MB)
 - **CNAME** - Custom domain configuration
-- **No external CSS/JS dependencies** - Everything embedded!
 
-## ✅ Works Everywhere
+## 🚀 Deploy to GitHub Pages
 
-- ✅ **Double-click index.html** - Opens in browser
-- ✅ **VS Code Live Server** - Right-click → Open with Live Server
-- ✅ **GitHub Pages** - Push and deploy instantly
-- ✅ **Any static host** - Netlify, Vercel, etc.
+### Method 1: Deploy this folder directly
 
-## 🚀 Deploy to GitHub Pages (3 Steps)
+1. Create a new GitHub repository
+2. Push this `site` folder to the repository
+3. Go to Settings → Pages
+4. Set source to: Branch `main`, Folder `/` (root)
+5. Save and wait 5-10 minutes
 
-### Step 1: Push to GitHub
-```bash
-git init
-git add .
-git commit -m "Static site for GitHub Pages"
-git remote add origin https://github.com/YOUR_USERNAME/humansofwelive.git
-git push -u origin main
-```
+### Method 2: Deploy as subfolder
 
-### Step 2: Enable GitHub Pages
-1. Go to repository Settings → Pages
-2. Source: Branch `main`, Folder `/site`
-3. Click Save
+1. Push the entire project to GitHub
+2. Go to Settings → Pages
+3. Set source to: Branch `main`, Folder `/site`
+4. Save
 
-### Step 3: Configure Custom Domain (Optional)
-1. In Pages settings, add: `humansofwelive.org`
-2. Update DNS at your domain provider:
-   ```
-   Type: A, Name: @, Value: 185.199.108.153
-   Type: A, Name: @, Value: 185.199.109.153
-   Type: A, Name: @, Value: 185.199.110.153
-   Type: A, Name: @, Value: 185.199.111.153
-   ```
-3. Wait 1-24 hours for DNS propagation
-4. Enable "Enforce HTTPS"
+## 📝 Important Features
 
-**Done!** Your site will be live at `https://humansofwelive.org`
-
-## 🎯 Key Features
-
-✅ **Pure HTML/CSS** - No build process, no dependencies
-✅ **Homepage shows excerpts** - Clean post listing
-✅ **Full post pages** - Individual pages for each story
-✅ **Responsive design** - Mobile, tablet, desktop
-✅ **Fast loading** - All CSS embedded inline
-✅ **Relative paths** - Works locally and on GitHub Pages
-
-## 💰 Cost Savings
-
-| Before (Ghost) | After (GitHub Pages) |
-|----------------|---------------------|
-| $10-30/month | **$0/month** |
-| ~$120-360/year | **FREE** ✅ |
-
-## 📁 Project Structure
-
-```
-humansofwelive/
-├── site/                     # 👈 DEPLOY THIS FOLDER
-│   ├── index.html            # Homepage
-│   ├── *.html                # Blog post pages
-│   ├── CNAME                 # Custom domain
-│   ├── content/images/       # All images
-│   └── README.md             # Site documentation
-├── build_site.py             # Script to rebuild (if needed)
-└── README.md                 # This file
-```
+✅ **No external dependencies** - All CSS is embedded in HTML files
+✅ **Relative paths** - Works with Live Server, file://, and GitHub Pages
+✅ **No Python needed** - Pure HTML/CSS only
+✅ **Homepage shows excerpts** - Not full post content
+✅ **Mobile responsive** - Works on all devices
 
 ## 🧪 Test Locally
 
-### Option 1: Just Open It
-Double-click `site/index.html` - that's it!
+### Option 1: Just open the file
+Simply double-click `index.html` to open in your browser
 
-### Option 2: VS Code Live Server
-1. Install "Live Server" extension
-2. Right-click `site/index.html`
+### Option 2: Use VS Code Live Server
+1. Install "Live Server" extension in VS Code
+2. Right-click `index.html`
 3. Select "Open with Live Server"
 
-### Option 3: Python (if you have it)
+### Option 3: Use Python (optional)
 ```bash
-cd site
 python3 -m http.server 8000
-# Visit http://localhost:8000
 ```
+Visit: http://localhost:8000
+
+## 📂 Folder Structure
+
+```
+site/
+├── index.html                    # Homepage
+├── care-leaver-to-chane-maker.html
+├── preethi-story.html
+├── akhil-story-2.html
+├── divya-story.html
+├── vishwajeet-story-2.html
+├── lateeshyas-story.html
+├── bhavyas-story.html
+├── CNAME                         # Custom domain
+└── content/
+    └── images/                   # All images
+        ├── 2025/07/              # Blog post images
+        └── size/w256h256/2025/06/ # Favicon
+```
+
+## 🎨 Features
+
+- Clean, modern design
+- Fast loading (static HTML)
+- SEO friendly
+- Accessible markup
+- Print-friendly styles
+
+## 💰 Cost
+
+**$0/month** when hosted on GitHub Pages! 🎉
 
 ## 🔄 Updating Content
 
-### If you need to add/edit posts:
+If you need to add/edit content:
 
-**Easy way (no Python):** Edit HTML files directly
-- Update `site/index.html` to add/remove posts from homepage
-- Create new `.html` files for new posts
-- Follow the existing structure
+1. **Easy way**: Edit HTML files directly
+2. **Automated way**: Use the `build_site.py` script in parent folder
 
-**Automated way (requires Python):**
-```bash
-python3 build_site.py
-```
-This will re-fetch all content from the Ghost RSS feed.
+## 📱 Mobile Support
 
-## 📝 Blog Posts Included
-
-1. Care Leaver To Change Maker (Nisha Das)
-2. Preethi's Story
-3. Akhil's Story
-4. Divya's Story
-5. Vishwajeet's Story
-6. Lateeshya's Story
-7. Bhavya's Story
-
-## 🌐 Technical Details
-
-- **Original**: Ghost blog at https://humansofwelive.org/
-- **Source**: Converted from Ghost RSS feed
-- **Format**: Pure HTML5 + inline CSS
-- **Images**: All stored locally in `content/images/`
-- **Size**: ~25 MB total
-- **Browser Support**: All modern browsers
-- **Mobile**: Fully responsive
-
-## 🎨 Design
-
-The site preserves the look and feel of the original Ghost blog:
-- Clean, minimal design
-- Readable typography
-- Orange accent color (#f7b37b)
-- Card-based post layout
-- Professional styling
+The site is fully responsive and works great on:
+- Mobile phones
+- Tablets
+- Desktops
+- Print
 
 ## ⚡ Performance
 
-- No external CSS files = fewer requests
-- No JavaScript required
+- No external CSS files = fewer HTTP requests
 - Optimized images
-- Static HTML = instant loading
-- CDN-ready (via GitHub Pages)
+- Clean HTML
+- Fast page load
 
-## 📱 Responsive
+## 🌐 Browser Support
 
-Works perfectly on:
-- 📱 Mobile phones
-- 📱 Tablets
-- 💻 Laptops
-- 🖥️ Desktops
-- 🖨️ Print media
-
-## 🔒 Security
-
-- No server-side code
-- No database
-- No user input
-- No vulnerabilities
-- Always up-to-date
-
-## 📄 License
-
-Content belongs to WeLive Foundation and respective authors.
-
-## 🔗 Links
-
-- **Original Ghost Blog**: https://humansofwelive.org/
-- **WeLive Foundation**: https://welivefoundation.org.in/
-- **GitHub Pages Docs**: https://docs.github.com/en/pages
+Works in all modern browsers:
+- Chrome, Firefox, Safari, Edge
+- iOS Safari, Chrome Mobile
+- IE 11+ (basic support)
 
 ---
 
-## ✨ You're All Set!
-
-Your website is ready to deploy. No Python, no build process, no dependencies - just pure HTML/CSS.
-
-**Next step**: Push to GitHub and enable Pages, or just open `site/index.html` in your browser!
-
-💚 **Saving $120-360/year by switching to GitHub Pages** 💚
+**Enjoy your free, fast, static website!** 🚀
